@@ -14,3 +14,8 @@ este projeto contem a implementação do método dos momentos para revelar distr
 
 
 
+# Distribuição de Carga de Placa em L
+
+
+
+![carga em fio](https://github.com/gabriel-ferreira-da-silva/metodo-dos-momentos/blob/main/imagens/placa-L.png?raw=true)
