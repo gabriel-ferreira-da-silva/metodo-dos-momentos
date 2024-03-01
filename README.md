@@ -1,10 +1,10 @@
 # Método dos momentos
 
-este projeto contem a implementação do método dos momentos para revelar distribuições de cargas em objetos sujeitos a um potêncial elétrico.
+este projeto contem a implementação do método dos momentos para revelar distribuições de cargas em objetos sujeitos a um potêncial elétrico, impedância e distribuição de corrente numa antena de Dipolo.
 
-## Distribuição em fio
+## Impedância convergente numa antena de dipolo
 
-![carga em fio](https://github.com/gabriel-ferreira-da-silva/metodo-dos-momentos/blob/main/imagens/Fio.png?raw=true)
+![carga em fio](https://github.com/gabriel-ferreira-da-silva/metodo-dos-momentos/blob/main/imagens/dipolo.png?raw=true)
 
 
 
