@@ -70,18 +70,18 @@ map.append((3,1))
 
 curves = []
 
-curves.append([lambda y: 1, 2, 3])
-curves.append([lambda y: 2 * (y - 1.5), 1.5, 2])
-curves.append([lambda y: y, 1, 2.5])
+curves.append([lambda y: -y+1, 0, 1])         # New curve (y=x)
 
-curves=[]
-curves.append([lambda y: 1, 0,1])
 
 eigenvalues, eigenvectors = rayleigh(map, curves)
 
-def phi(X, Y, eigenvector):
+def phi(X, Y, eigenvector,curves):
     res = np.zeros_like(X)  # Initialize result array
-    mask = (X >= 0) & (X <= 2) & (Y >= 0) & (Y <= 1)
+    mask = np.zeros(X.shape, dtype=bool)  # Create an empty mask
+    
+    for curve in curves:
+        mask |= (X >= 0) & (X <= curve[0](Y)) & (Y >= 0) & (Y <= 1)
+    
 
     if np.any(mask):  # Check if there are any valid points
         for i in range(len(eigenvector)):
@@ -89,25 +89,25 @@ def phi(X, Y, eigenvector):
     
     return res
 
-x = np.linspace(0, 2, 250)
-y = np.linspace(0, 2, 250)
+x = np.linspace(-0.1, 1.1, 250)
+y = np.linspace(-0.1, 1.1, 250)
 X, Y = np.meshgrid(x, y)
 
 fig, ax = plt.subplots(figsize=(10, 8))
 
 def update(i):
     ax.clear()  # Clear previous plot
-    Z = phi(X, Y, eigenvectors[i].real)  # Combine base function with eigenvector
+    Z = phi(X, Y, eigenvectors[i].real,curves)  # Combine base function with eigenvector
     contour = ax.contourf(X, Y, Z, levels=100, cmap='inferno')  # Create a filled contour plot
     ax.set_title(f"Eigenvector {i + 1}: Eigenvalue {eigenvalues[i].real:.2f}")
     ax.set_xlabel('x')
     ax.set_ylabel('y')
-    ax.set_xlim(0, 2)
-    ax.set_ylim(0, 2)
+    ax.set_xlim(-0.1, 1.1)
+    ax.set_ylim(-0.1, 1.1)
     return contour
 
 ani = FuncAnimation(fig, update, frames=len(eigenvectors), interval=1000, repeat=True)
 
-ani.save('waveguide_rectangle.gif', writer='pillow', fps=1)
+ani.save('waveguide_triangle_2.gif', writer='pillow', fps=1)
 
 plt.show()

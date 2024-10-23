@@ -1,21 +1,18 @@
-# Método dos momentos
+# Numerical Methods
 
-este projeto contem a implementação do método dos momentos para revelar distribuições de cargas em objetos sujeitos a um potêncial elétrico, impedância e distribuição de corrente numa antena de Dipolo.
+This repository contains implementations of numerical methods like method of moments, rayliegh and finite elements describe from textbooks and articles. Mostly applied to electromagnetic problems.
 
-## Impedância convergente numa antena de dipolo
+## Rayleigh
 
-![carga em fio](https://github.com/gabriel-ferreira-da-silva/metodo-dos-momentos/blob/main/imagens/dipolo.png?raw=true)
+in Rayleigh directory there are implementations of rayleigh method to find TE modes in waveguide.
 
+![](https://github.com/gabriel-ferreira-da-silva/metodo-dos-momentos/blob/main/doc/triangle.gif?raw=true) 
 
+## Method of Moments
 
-## Distribuição em placa
+In methodo of moments   directory there are implementions of method of moments applied to reveal charge distribuition of a plate where a constant voltage is applied.
 
-![carga em fio](https://github.com/gabriel-ferreira-da-silva/metodo-dos-momentos/blob/main/imagens/placa.png?raw=true)
-
-
-
-# Distribuição de Carga de Placa em L
+![](https://github.com/gabriel-ferreira-da-silva/metodo-dos-momentos/blob/main/doc/plate.gif?raw=true)
 
 
 
-![carga em fio](https://github.com/gabriel-ferreira-da-silva/metodo-dos-momentos/blob/main/imagens/placa-L.png?raw=true)
